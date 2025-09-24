@@ -10,6 +10,8 @@ import { Scalar } from '@scalar/hono-api-reference'
 
 const app = new Hono();
 
+app.get('/', (c: Context) => c.json({ message: 'running' }))
+
 app.route('/api/auth',authRouter)
 app.route('/api/',bucketRouter)
 app.route('/api/user',userRouter)
